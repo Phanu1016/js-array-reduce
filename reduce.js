@@ -24,7 +24,23 @@ Examples:
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
 
-function vowelCount(str) {}
+function vowelCount(str) {
+    const vowel = "aeiou"
+    let arr = str.split("")
+    return arr.reduce(function(result, nextValue){
+        if (vowel.indexOf(nextValue) > -1){
+            if (result[nextValue] != undefined){
+                result[nextValue] += 1
+                
+            }else{
+                result[nextValue] = 1
+            }
+            return result
+        }else {
+            return result
+        }
+    }, {})
+}
 
 /*
 Write a function called addKeyAndValue which accepts an array of objects and returns the array of objects passed to it with each object now including the key and value passed to the function.
